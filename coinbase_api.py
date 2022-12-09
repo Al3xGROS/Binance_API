@@ -1,7 +1,8 @@
 import requests
 import json
+import sqlite3
 
-# GET A LIST OF ALL AVAILABLE CRYPTOCURRENCIES AND DISPLAY IT
+# LIST OF ALL AVAILABLE CRYPTOCURRENCIES
 def getAllCrypto():
     uri = 'https://api.pro.coinbase.com/currencies'
     response = requests.get(uri).json()
@@ -11,7 +12,7 @@ def getAllCrypto():
             print(response[i]['id'])
 
 
-# CREATE A FUNCTION TO DISPLAY THE 'ASK' OR 'BID' PRICE OF AN ASSET
+# FUNCTION TO DISPLAY THE 'ASK' OR 'BID' PRICE OF AN ASSET
 def getDepth(direction, pair):
     url = "https://api.exchange.coinbase.com/products/" + pair + "/book?level=1"
     headers = {"accept": "application/json"}
@@ -32,4 +33,23 @@ def getOrderBook(asset):
 
     print(response.text)
 
-getOrderBook("BTC-USD")
+
+# FUNCTION TO READ CANDLES (FOR A DURATION OF 5 MINUTES => DURATION = 300)
+def refreshDataCandle(pair, duration):
+    url = "https://api.exchange.coinbase.com/products/" + pair + "/candles?granularity=" + str(duration)
+    headers = {"accept": "application/json"}
+    response = requests.get(url, headers=headers)
+    print(response.text)
+
+
+# SQLITE TABLE 
+def connectTable():
+    connection = sqlite3.connect('database.db')
+    cursor = connection.cursor()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS dataCandles
+                (Id INTEGER PRIMARY KEY, date INT, high REAL, low REAL, open REAL, close REAL, volume REAL)''')
+
+    connection.commit()
+    connection.close()
+
+connectTable()
