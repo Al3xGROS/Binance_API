@@ -35,8 +35,8 @@
 
 
 <h2>References</h2>
-<p>Wikipedia page for APIs [wikiAPI](https://en.wikipedia.org/wiki/API)</p>
-<p>Using requests in Python [requestsPython](https://www.pythonforbeginners.com/requests/using-requests-in-python)</p>
-<p>Binance API Documentation [BinanceAPIDoc](https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md)</p>
-<p>Coinbase API Documentation [CoinbaseAPIDoc](https://docs.cloud.coinbase.com/exchange/docs)</p>
+<p>Wikipedia page for APIs (https://en.wikipedia.org/wiki/API)</p>
+<p>Using requests in Python (https://www.pythonforbeginners.com/requests/using-requests-in-python)</p>
+<p>Binance API Documentation (https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md)</p>
+<p>Coinbase API Documentation (https://docs.cloud.coinbase.com/exchange/docs)</p>
 
