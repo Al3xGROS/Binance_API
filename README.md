@@ -34,7 +34,7 @@
 
 
 ## References
-Wikipedia page for APIs (https://en.wikipedia.org/wiki/API) 
+Wikipedia page for APIs (https://en.wikipedia.org/wiki/API)
 Using requests in Python (https://www.pythonforbeginners.com/requests/using-requests-in-python)
 Binance API Documentation (https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md) 
 Coinbase API Documentation (https://docs.cloud.coinbase.com/exchange/docs) 
